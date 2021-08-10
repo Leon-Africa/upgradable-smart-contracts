@@ -6,9 +6,11 @@ This project uses the [OpenZeppelin Upgrades Plugins](https://docs.openzeppelin.
 
 Effectively there are three smart contracts:
 
-Implementation contract containing the logic. (The one you code)
-ProxyAdmin to be the admin of the proxy.
-Proxy to the implementation contract (the contract you interact with).
+1. The Implementation contract containing the logic. (The one you code)
+
+2. The ProxyAdmin to be the admin of the proxy.
+
+3. The Proxy to the implementation contract (the contract you interact with).
 
 [Further elaboration](https://ethereum.stackexchange.com/a/106298/56328)
 
