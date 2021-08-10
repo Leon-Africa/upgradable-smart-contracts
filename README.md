@@ -16,19 +16,25 @@ There are [various Upgrades Patterns](https://blog.openzeppelin.com/the-state-of
 
 # Prerequisite 
 [Node.js LTS](https://nodejs.org/en/)
+
 [MetaMask](https://metamask.io/)
 
 # Environment Setup
 ````npm install -g yarn````
+
 ````yarn tsc````
 
 # How to use (Locally)
 Clone this repository 
+
 ````git clone https://github.com/Leon-Africa/upgradable-smart-contracts.git````
+
 ````yarn install````
 
 You will have to install a local instance of Hardhat 
+
 ````npx install hardhat````
+
 ````yarn add --dev "hardhat@^2.1.2"````
 
 NOTE: If you are on Windows ensure that you install hardhat via cmd as there is a [known bug](https://github.com/nomiclabs/hardhat/issues/1400) when installing with GitBash.
@@ -67,24 +73,31 @@ Ensure to replace ````"your_Alchemy_Archive_Node_API_Key"```` with the key you o
 
 
 Once complete start up a Hardhat Node running 
+
 ````npx hardhat node````
+
 In the [````hardhat-config.js````](https://hardhat.org/config/) configuration has been applied for forking therefore starting up the node by default invokes a [mainnet fork](https://hardhat.org/hardhat-network/guides/mainnet-forking.html) utilizing the Alchemy Archive Node. 
 
 Note: There is an additional recommnedation where you can [pin a specific](https://hardhat.org/hardhat-network/guides/mainnet-forking.html#pinning-a-block) block for the mainnet fork.
 
 Run the the smart contract test:
+
 ````npx hardhat test````
 
 Deploy the smart contract to the mainnet fork.
+
 ````npx hardhat deploy -network localhost scripts/deploy.js````
 
 NOTE: Copy the output proxy smart contract address and store it somewhere
 
 Interact with the deployed smart contract
+
 ````npx hardhat console````
 
 Once the console opens:
+
 ````const USC = await ethers.getContractFactory("USC")```` 
+
 ````const usc = await USC.attach("proxy_address_here")```` 
 
 Then you can start calling functions i.e ````(await usc.name()).toString()````
@@ -99,6 +112,7 @@ Next you have to fund the account that will perform the deployment. Navigate to 
 [Obtain your MetaMask  private key](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key) and paste it in ````.secrets.json```` at ````"rinkeby": "rinkeby_private_key"````
 
 Deploy your smart contract to Rinkeby:
+
 ````npx hardhat run --network rinkeby scripts/deploy.js````
 
 NOTE: Copy the output proxy smart contract address and store it somewhere
@@ -111,6 +125,7 @@ We create a Gnosis Safe on the Rinkeby Network. Gnosis safe markets themseleves 
 Copy the address for your Gnosis Safe and navigate to the file ````transfer_ownership.js```` and add in your Gnosis Safe Address  ````const gnosisSafe = 'your_gnosis_safe_address'````. This script will transfer ownership of the ProxyAdmin contract to your Gnosis Safe.
 
 To complete the transfer run:
+
 ````npx hardhat run --network rinkeby scripts/transfer_ownership.js````
 
 # Setup OpenZeppen Defender
@@ -143,6 +158,7 @@ Do the same with the unit tests for the implementation and proxy contract. Creat
 Next Create the script that deploys the upgraded smart contract - or more accurately - the new implementation contract. Navigate to the file ````upgrade.js```` and provide your proxy address ````  const proxyAddress = 'your_proxy_address';```` (NOT your Gnosis safe address, the deployed proxy smart contract address is the address when you initially deployed to the tesnet).
 
 Deploy to the upgraded implementation contract Rinkeby.
+
 ````npx hardhat run --network rinkeby scripts/upgrade.js````
 
 NOTE: In practice before deploying to testnet you should first perform due diligince by redeploying your initial contract on the node with ```deploy.js``` then input that proxy address in ````upgrade.js````. After which you would run the tests, deploy ````upgrade.js```` to the mainnet fork and make sure that you can call the new function you just added.
@@ -159,9 +175,13 @@ In OpenZeppelin Defender Navigate to the contract for which you set the display 
 To interact with the upgraded smart contract use the Hardhat console specififying the Rinkeby network and utilizing the proxy smart contract address. (NOT your Gnosis safe address, the deployed proxy smart contract address is the address when you initially deployed to the tesnet). i.e
 
 Interact with the upgraded smart contract
+
 ````npx hardhat console --network rinkeby````
+
 ````const USC2 = await ethers.getContractFactory("USC2")```` 
+
 ````const usc2 = await USC2.attach("proxy_address_here")```` 
+
 ````(await usc2.number777()).toString()````
 
 # Additional Features
