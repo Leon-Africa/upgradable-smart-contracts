@@ -25,4 +25,9 @@ describe("USC", function () {
         expect(await usc.decimals()).to.equal(7);
       });
 
+      it("returns number777()", async function () {
+        await usc.number777();
+        expect(await usc.number777()).to.equal(777);
+      });
+
 });

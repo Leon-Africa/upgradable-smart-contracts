@@ -59,4 +59,8 @@ contract USC is
     function upgrade_var() public view returns (string memory) {
         return _upgrade_var;
     }
+
+    function number777() public pure returns (uint256){
+    return 777;
+}
 }
