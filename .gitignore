@@ -102,3 +102,15 @@ dist
 
 # TernJS port file
 .tern-port
+
+#Hardhat files
+cache
+artifacts
+
+# OpenZeppelin
+.openzeppelin/dev-*.json
+.openzeppelin/.session
+.openzeppelin/unknown-*.json
+
+#secrets
+.secrets.json
