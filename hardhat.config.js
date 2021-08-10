@@ -23,9 +23,6 @@ task("accounts", "Prints the list of accounts", async () => {
  */
 module.exports = {
   defaultNetwork: "localhost",
-
-  //Comment out the Networks you are not using
-
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545"
@@ -41,42 +38,42 @@ module.exports = {
       gasPrice: 20000000000,
       accounts: [secrets.mainnet['eth-mainnet']]
     },
-    bscmainet: {
-      url: "https://bsc-dataseed.binance.org/",
-      chainId: 56,
-      gasPrice: 20000000000,
-      accounts: [secrets.mainnet['bsc-mainnet']]
-    },
-    bsctestnet: {
-      url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-      chainId: 97,
-      gasPrice: 20000000000,
-      accounts: [secrets.testnet['bsc-testnet']]
-    },
-    ropsten: {
-      url: `https://eth-ropsten.alchemyapi.io/v2/${secrets['alchemy-testnet'].ropsten}`,
-      chainId: 3,
-      gasPrice: 20000000000,
-      accounts: [secrets.testnet['eth-testnet'].ropsten]
-    },
-    kovan: {
-      url: `https://eth-kovan.alchemyapi.io/v2/${secrets['alchemy-testnet'].kovan}`,
-      chainId: 42,
-      gasPrice: 20000000000,
-      accounts: [secrets.testnet['eth-testnet'].kovan]
-    },
+    // bscmainet: {
+    //   url: "https://bsc-dataseed.binance.org/",
+    //   chainId: 56,
+    //   gasPrice: 20000000000,
+    //   accounts: [secrets.mainnet['bsc-mainnet']]
+    // },
+    // bsctestnet: {
+    //   url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+    //   chainId: 97,
+    //   gasPrice: 20000000000,
+    //   accounts: [secrets.testnet['bsc-testnet']]
+    // },
+    // ropsten: {
+    //   url: `https://eth-ropsten.alchemyapi.io/v2/${secrets['alchemy-testnet'].ropsten}`,
+    //   chainId: 3,
+    //   gasPrice: 20000000000,
+    //   accounts: [secrets.testnet['eth-testnet'].ropsten]
+    // },
+    // kovan: {
+    //   url: `https://eth-kovan.alchemyapi.io/v2/${secrets['alchemy-testnet'].kovan}`,
+    //   chainId: 42,
+    //   gasPrice: 20000000000,
+    //   accounts: [secrets.testnet['eth-testnet'].kovan]
+    // },
     rinkeby: {
       url: `https://eth-rinkeby.alchemyapi.io/v2/${secrets['alchemy-testnet'].rinkeby}`,
       chainId: 4,
       gasPrice: 20000000000,
       accounts: [secrets.testnet['eth-testnet'].rinkeby]
     },
-    goerli: {
-      url: `https://eth-goerli.alchemyapi.io/v2/${secrets['alchemy-testnet'].goerli}`,
-      chainId: 5,
-      gasPrice: 20000000000,
-      accounts: [secrets.testnet['eth-testnet'].goerli]
-    },
+    // goerli: {
+    //   url: `https://eth-goerli.alchemyapi.io/v2/${secrets['alchemy-testnet'].goerli}`,
+    //   chainId: 5,
+    //   gasPrice: 20000000000,
+    //   accounts: [secrets.testnet['eth-testnet'].goerli]
+    // },
   },
   solidity: {
     compilers: [
