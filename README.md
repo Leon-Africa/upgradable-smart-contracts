@@ -33,13 +33,11 @@ Clone this repository
 
 You will have to install a local instance of Hardhat 
 
-````npx install hardhat````
-
-````yarn add --dev "hardhat@^2.1.2"````
+````yarn add --dev hardhat````
 
 NOTE: If you are on Windows ensure that you install hardhat via cmd as there is a [known bug](https://github.com/nomiclabs/hardhat/issues/1400) when installing with GitBash.
 
-Create an Account on [Alchemy](https://www.alchemy.com/) an setup an Archive node. After obtaining the keys create a file ````.secrets.json```` in the project root dir with the folliwng structure
+Create an Account on [Alchemy](https://www.alchemy.com/) and create a node for Rinkeby and Mainnet respectively. After obtaining the keys create a file ````.secrets.json```` in the project root dir with the folliwng structure
 
 ````
 {
@@ -69,8 +67,22 @@ Create an Account on [Alchemy](https://www.alchemy.com/) an setup an Archive nod
 }
 
 ````
-Ensure to replace ````"your_Alchemy_Archive_Node_API_Key"```` with the key you obtained from Alchemy.
 
+Concerning the Nodes:
+
+Ensure to replace ````"your_Alchemy_Archive_Node_API_Key"```` with the Mainnet key you obtained from Alchemy.
+
+Ensure to replace ````"ethereum_NODE_KEY"```` with the Mainnet key you obtained from Alchemy.
+
+Ensure to replace ````"rinkeby_NODE_KEY"```` with the Rinkeby key you obtained from Alchemy.
+
+Concerning the Private Keys:
+
+Ensure to enter the value for ````"ethmainnet_private_key"````
+
+Ensure to enter the value for ````"rinkeby_private_key"```` 
+
+NOTE: It is imperative that you store these values in a file ````.secrets.json```` this has been specified in the ````.gitignore```` file to ensure that these values are not commited to source control.
 
 Once complete start up a Hardhat Node running 
 
