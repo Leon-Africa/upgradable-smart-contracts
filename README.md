@@ -37,31 +37,29 @@ Create an Account on [Alchemy](https://www.alchemy.com/) an setup an Archive nod
 
 ````
 {
-	"mainnet": {
-		"eth-mainnet": "ethmainnet_private_key",
-		"bsc-mainnet": "your_bscmainnet_private_key"
-	},
-
-	"testnet": {
-		"eth-testnet": {
-			"ropsten": "ropsten_private_key",
-			"kovan": "kovan_private_key",
-			"rinkeby": "rinkeby_private_key",
-			"görli": "görli_private_key"
-		},
-
-        "alchemy": {
-            "ropsten": "ropsten_NODE_KEY",
-			"kovan": "kovan_NODE_KEY",
-			"rinkeby": "rinkeby_NODE_KEY",
-			"görli": "görli_NODE_KEY"
-        }
-
-		"bsc-testnet": "your_bsctestnet_private_key"
-	},
-
-	"fork": "your_Alchemy_Archive_Node_API_Key"
-
+    "mainnet": {
+        "eth-mainnet": "ethmainnet_private_key",
+        "bsc-mainnet": "your_bscmainnet_private_key"
+    },
+    "testnet": {
+        "eth-testnet": {
+            "ropsten": "ropsten_private_key",
+            "kovan": "kovan_private_key",
+            "rinkeby": "rinkeby_private_key",
+            "goerli": "goerli_private_key"
+        },
+        "bsc-testnet": "your_bsctestnet_private_key"
+    },
+    "alchemy-testnet": {
+        "ropsten": "ropsten_NODE_KEY",
+        "kovan": "kovan_NODE_KEY",
+        "rinkeby": "rinkeby_NODE_KEY",
+        "goerli": "goerli_NODE_KEY"
+    },
+    "alchemy-MAINNET": {
+        "ethereum": "ethereum_NODE_KEY"
+    },
+    "fork": "your_Alchemy_Archive_Node_API_Key"
 }
 
 ````
