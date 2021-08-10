@@ -150,20 +150,24 @@ You can now manange Upgrades through OpenZeppelin Defender and also invoke the P
 
 # Create and Deploy a New Implementation Contract
 Create a file "USC2.sol" copy all the code from "USC.sol" and paste it in the file "USC2.sol".
-Add a function to "USC2.sol" i.e
+Add a function and a constant to "USC2.sol" i.e
 
 ````
-function number777 returns (unint256){
-    return 777;
+string private constant _john_4_16_kjv = "Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.";
+````
+
+````
+ function JesusIsLord() public pure returns (string memory){
+    return _john_4_16_kjv;
 }
 ````
 
 Do the same with the unit tests for the implementation and proxy contract. Creating files "usc2.test.js", "usc2.proxy.js". add the test for the new function:
 
 ````
-  it('Should return 777', async function () {
-    await uscv2.number777();
-    expect((uscv2.number777()).toString()).to.equal('777');
+  it('Should return _john_4_16_kjv', async function () {
+    await uscv2.JesusIsLord();
+    expect((uscv2.JesusIsLord()).toString()).to.equal('Jesus saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me.');
   });
 ````
 
