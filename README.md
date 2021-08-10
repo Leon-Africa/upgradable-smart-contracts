@@ -198,13 +198,13 @@ Interact with the upgraded smart contract
 
 ````const usc2 = await USC2.attach("proxy_address_here")```` 
 
-````(await usc2.number777()).toString()````
+````(await usc2.JesusIsLord()).toString()````
 
 # Additional Features
-This base smart contract also implements [ReentrancyGuard](https://docs.openzeppelin.com/contracts/4.x/api/security#ReentrancyGuard) and also [Pausable](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable).
+This base smart contract also implements [ReentrancyGuard](https://docs.openzeppelin.com/contracts/4.x/api/security#ReentrancyGuard) as well as [Pausable](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable).
 
-Functionals that use ReentrancyGuard specifiy the ````nonReentrant()```` modifier. 
-Functions that can be called when the smart contract is not paused specify the ````whenNotPaused()```` modifier. Whereas functions that can be called when the smart contract is paused specify the ````whenPaused()```` modifier
+You can implement functions that use ReentrancyGuard specifiy the ````nonReentrant()```` modifier. 
+Additionally you can implement functions that can be called when the smart contract is not paused by specifying the ````whenNotPaused()```` modifier. Whereas functions that can be called when the smart contract is paused should specify the ````whenPaused()```` modifier
 
 # Conclusion
 You can use this code as a base code to setup your Upgradable Smart Contract Project on any EVM based blockchain. The upgrades process for any new implementationn contracts that you create will follow the logic as specified above. 
