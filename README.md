@@ -190,7 +190,7 @@ In OpenZeppelin Defender Navigate to the contract for which you set the display 
 
 
 # Interact with the Upgraded Smart Contract
-To interact with the upgraded smart contract use the Hardhat console specififying the Rinkeby network and utilizing the proxy smart contract address. (NOT your Gnosis safe address, the deployed proxy smart contract address is the address when you initially deployed to the tesnet). i.e
+To interact with the upgraded smart contract use the Hardhat console specifying the Rinkeby network and utilizing the proxy smart contract address. (NOT your Gnosis safe address, the deployed proxy smart contract address is the address when you initially deployed to the tesnet). i.e
 
 Interact with the upgraded smart contract
 
@@ -209,4 +209,4 @@ You can implement functions that use ReentrancyGuard specifiy the ````nonReentra
 Additionally you can implement functions that can be called when the smart contract is not paused by specifying the ````whenNotPaused()```` modifier. Whereas functions that can be called when the smart contract is paused should specify the ````whenPaused()```` modifier
 
 # Conclusion
-You can use this code as a base code to setup your Upgradable Smart Contract Project on any EVM based blockchain. The upgrades process for any new implementationn contracts that you create will follow the logic as specified above. 
+You can use this code as a base code to setup your Upgradable Smart Contract Project on any EVM based blockchain. The upgrades process for any new implementation contracts that you create will follow the logic as specified above. 
